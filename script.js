@@ -4,6 +4,7 @@ var clock = new Vue({
         time: '',
         date: '',
         cur: '',
+        tcur: '',
         lst_d: '',
         lst_h: '',
         lst_m: '',
@@ -11,7 +12,7 @@ var clock = new Vue({
     }
 });
 
-var week = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+var week = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
 var timerID = setInterval(updateTime, 1000);
 updateTime();
 function updateTime() {
@@ -40,6 +41,16 @@ function todaylst() {
     var NowTime = new Date();
     clock.cur = Math.floor(((NowTime.getTime() / 1000) + 28800) % 86400) / 864;
     clock.cur = clock.cur.toFixed(2); 
+};
+
+var termleast = setInterval(termlst, 8640);
+termlst();
+function termlst() {
+    var starTime = new Date("2021/06/07 09:00:00").getTime();
+    var termTime = new Date("2022/06/07 09:00:00").getTime();
+    var NowTime = new Date().getTime();
+    clock.tcur = Math.floor((NowTime-starTime) / (termTime-starTime) * 100);
+    clock.tcur = clock.tcur.toFixed(2); 
 };
 
 function change(a){

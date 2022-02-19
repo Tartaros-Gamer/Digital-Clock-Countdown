@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Digital Clock | Eqvpkbz</title>
+    <title>高考倒计时 | 高考加油</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
@@ -16,21 +16,27 @@
     <link rel="stylesheet" href="./light.css" id="css"/>
   </head>
   <body>
+    <audio  controls="controls" playsinline webkit-playsinline>
+    <source src="https://music.163.com/song/media/outer/url?id=1385176005.mp3">
+    </audio>
     <!-- partial:index.partial.html -->
     <div id="clock">
       <hr />
       <p class="date">{{ date }}</p>
       <p class="time">{{ time }}</p>
       <hr />
-      <p class="date">目前距离2022年湖南省高考还有</p>
+      <p class="date">目前距离 2022 年高考还有</p>
       <p class="lst_time">{{ lst_d }} 天 {{ lst_h }} 小时 {{ lst_m }} 分钟 {{ lst_s }} 秒</p>
       <hr />
+      <p class="date">高三你已经走过</p>
+      <vue-simple-progress size="medium" :val="tcur" bar-border-radius=5></vue-simple-progress>
+      <p class="termlst">{{ tcur }} %</p>
       <p class="date">今天已经过去了</p>
       <vue-simple-progress size="medium" :val="cur" bar-border-radius=5></vue-simple-progress>
       <p class="todaylst">{{ cur }} %</p>
       <hr />
-      <button onClick="change(1)" class="btn Night">Night</button>
-      <button onClick="change(2)" class="btn Light">Light</button>
+      <button onClick="change(1)" class="btn Night">暗色</button>
+      <button onClick="change(2)" class="btn Light">明亮</button>
     </div>
     <!-- partial -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
