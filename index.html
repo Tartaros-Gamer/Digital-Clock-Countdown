@@ -16,17 +16,17 @@
     <link rel="stylesheet" href="./night.css" id="css"/>
   </head>
   <body>
+    <!-- partial:index.partial.html -->
+    <div id="clock">
     <audio  controls="controls" playsinline webkit-playsinline>
     <source src="https://music.163.com/song/media/outer/url?id=1385176005.mp3">
     </audio>
-    <!-- partial:index.partial.html -->
-    <div id="clock">
       <hr />
       <p class="date">{{ date }}</p>
       <p class="time">{{ time }}</p>
       <hr />
       <p class="date">目前距离 2022 年高考还有</p>
-      <p class="lst_time">{{ lst_d }} 天 {{ lst_h }} 小时 {{ lst_m }} 分钟 {{ lst_s }} 秒</p>
+      <p class="lst_time">{{ lst_d }} 天 {{ lst_h }} 小时 <br>{{ lst_m }} 分 {{ lst_s }} 秒</p>
       <hr />
       <p class="date">高三你已经走过</p>
       <vue-simple-progress size="medium" :val="tcur" bar-border-radius=5></vue-simple-progress>

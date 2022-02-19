@@ -35,7 +35,7 @@ hr {
   padding: 5px 0;
 }
 #clock .date {
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   font-size: 24px;
 }
 #clock .lst_time {
