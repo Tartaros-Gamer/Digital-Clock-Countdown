@@ -57,8 +57,19 @@ function change(a){
     var css=document.getElementById("css");
     if (a == 1) {
         css.setAttribute("href","night.css");
+        bubbly({
+          colorStart: "#181520",
+          colorStop: "#181520",
+          shadowColor: "#fff7fe",
+          bubbleFunc: () => `hsla(${Math.random() * 360}, 0%, 100%, ${Math.random() * 0.3})`
+        });
     }
     if (a == 2) {
         css.setAttribute("href","light.css");
+        bubbly({
+          colorStart: "#a3b8c8",
+          colorStop: "#05313d",
+          bubbleFunc: () => `hsla(0, 100%, 50%, ${Math.random() * 0.25})`
+        });
     }
 }
